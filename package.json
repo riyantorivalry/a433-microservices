@@ -1,7 +1,7 @@
 {
-  "name": "docker-software-delivery",
-  "version": "1.0.0",
-  "private": true,
+  "name": "item-app",
+  "version": "v1",
+  "private": false,
   "scripts": {
     "build": "node ./node_modules/gulp/bin/gulp.js",
     "start": "node ./bin/www",
