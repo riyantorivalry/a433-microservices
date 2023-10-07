@@ -1,6 +1,6 @@
 {
   "name": "item-app",
-  "version": "v1",
+  "version": "1.0.0",
   "private": false,
   "scripts": {
     "build": "node ./node_modules/gulp/bin/gulp.js",
