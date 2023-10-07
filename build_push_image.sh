@@ -7,14 +7,14 @@ docker build -t item-app:v1 .
 docker images
 
 # Mengubah nama image sesuai dengan format Github Packages 
-docker tag item-app:v1 docker.pkg.github.com/riyantorivalry/a433-microservices/item-app:v1
+docker tag item-app:v1 ghcr.io/riyantorivalry/item-app:v1
 
 # Read the token from the file for login auth
 chmod 400 token.txt
 TOKEN=$(cat token.txt)
 
 # Login ke Github Packages
-docker login -u riyantorivalry -p "$TOKEN" docker.pkg.github.com
+docker login -u riyantorivalry -p "$TOKEN" ghcr.io
 
 # Push image to Github Packages
-docker push docker.pkg.github.com/riyantorivalry/a433-microservices/item-app:v1
+docker push ghcr.io/riyantorivalry/item-app:v1

@@ -8,7 +8,7 @@ services: # Daftar service yang akan dijalankan pada docker compose
     restart: always  # Retart policy. Set ke 'always' agar selalu restart ketika terhenti
 
   item-app:
-    image: docker.pkg.github.com/riyantorivalry/a433-microservices/item-app:v1 # Menggunakan image yang telah di publich di Github Packages
+    image: ghcr.io/riyantorivalry/item-app:v1 # Menggunakan image yang telah di publich di Github Packages
     ports:
       - "80:8080" # Menggunakan port 80 untuk menjalankan app
     depends_on: # Pastikan item-app hanya berjalan setelah item-db diluncurkan
