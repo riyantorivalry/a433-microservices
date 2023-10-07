@@ -1,0 +1,19 @@
+version: '2' # Menggunakan Docker Compose versi 2
+
+services: # Daftar service yang akan dijalankan pada docker compose
+  item-db:
+    image: mongo:3 # Menggunakan image mongo:3 dari Docker Hub
+    volumes:
+      - app-db:/data/db
+    restart: always  # Retart policy. Set ke 'always' agar selalu restart ketika terhenti
+
+  item-app:
+    image: docker.pkg.github.com/riyantorivalry/a433-microservices/item-app:v1 # Menggunakan image yang telah di publich di Github Packages
+    ports:
+      - "80:8080" # Menggunakan port 80 untuk menjalankan app
+    depends_on: # Pastikan item-app hanya berjalan setelah item-db diluncurkan
+      - item-db
+    restart: always  # Retart policy. Set ke 'always' agar selalu restart ketika terhenti
+
+volumes:
+  app-db:
