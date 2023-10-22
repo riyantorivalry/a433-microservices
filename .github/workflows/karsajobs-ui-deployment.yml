@@ -2,7 +2,6 @@ name: Karsajobs UI Deployment
 
 on: [push, pull_request]
 
-
 jobs:
   lint-dockerfile:
     runs-on: ubuntu-latest
